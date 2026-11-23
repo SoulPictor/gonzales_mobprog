@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'screens/home_screen.dart';
 import 'screens/newsfeed_screen.dart';
 
-void main() => runApp(const AgbanlogFacebook());
+void main() => runApp(const GonzalesFacebook());
 
-class AgbanlogFacebook extends StatelessWidget {
-  const AgbanlogFacebook({super.key});
+class GonzalesFacebook extends StatelessWidget {
+  const GonzalesFacebook({super.key});
 
   @override
   Widget build(BuildContext context) {
