@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../constants.dart';
 import 'custom_font.dart';
 
@@ -20,8 +21,8 @@ class NewsFeedCard extends StatelessWidget {
     required this.date,
     this.numOfLikes = 0,
     this.hasImage = false,
-    this.profileImage = 'https://i.pravatar.cc/150?img=11',
-    this.currentUserImage = 'https://i.pravatar.cc/150?img=12',
+    this.profileImage = 'https://picsum.photos/seed/avatar1/150/150',
+    this.currentUserImage = 'https://picsum.photos/seed/currentuser/150/150',
     this.postImage,
   });
 
@@ -40,11 +41,7 @@ class NewsFeedCard extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Icon(
-              icon,
-              color: FB_DARK_PRIMARY,
-              size: ScreenUtil().setSp(18),
-            ),
+            Icon(icon, color: FB_DARK_PRIMARY, size: ScreenUtil().setSp(18)),
             SizedBox(width: ScreenUtil().setWidth(5)),
             CustomFont(
               text: label,

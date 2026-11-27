@@ -1,7 +1,5 @@
-# gonzales_mobprog
+## Lab Activity 2: Discussion
 
-A new Flutter project.
+To manage 10 dynamic posts and 20 notifications efficiently without duplicating widget trees, I structured the data using typed `List>` and `List>` collections and rendered them lazily via `ListView.builder` (in `newsfeed_screen.dart`) and `ListView.separated` (in `notification_screen.dart`). Each post entry dynamically supplies `numOfLikes`, `date`, and `hasImage` parameters to `NewsFeedCard`, while the app was rebranded to **Konek** with a custom plum, mauve, and peach color palette (`#522C5D`, `#845162`, `#29104A`, `#E3B6B1`, and `#FFE3D8`) in `constants.dart`.
 
-## Lab Activity 1: Discussion
-
-To integrate images into `newsfeed_card.dart` dynamically, I added a boolean parameter (`hasImage`) and an optional string parameter (`postImage`) to the `NewsFeedCard` constructor. Inside the widget's `build` method, a conditional `if (hasImage && postImage != null)` statement checks whether the post includes an image before rendering an `Image.network` widget wrapped in `ClipRRect` (using `width: double.infinity` and `BoxFit.cover` for consistent card sizing). When `hasImage` is `false` or `postImage` is `null`, Flutter skips rendering the image container completely, preventing empty gaps in text-only posts.
+A key challenge during implementation was a naming collision between our custom `Notification` widget and Flutter's built-in `Notification` class from `material.dart`, which I resolved by importing the widget using the alias `import '../widgets/notification.dart' as notif;`. Additionally, synchronizing the dynamic `AppBar` title with the three-tab `BottomNavigationBar` required updating `_selectedIndex` in both `onTap` and `PageView.onPageChanged` so swiping and tapping stay in sync.
